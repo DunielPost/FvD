@@ -28,6 +28,44 @@
 /****************/
 
 /* jouw code */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 h1 { 
 	color: red;
 }
+
+/* Header */
+
+header{
+	display: flex;
+	align-items: center;
+	background-color:#410C00;
+  	justify-content: space-between;
+
+}
+
+header > h2  {
+	color: #FFFF;
+	margin-left: .5em;
+
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Hero */
+
+p:first-of-type{
+	color: #FFFF;
+}
+section:first-of-type{
+	background-color: #111;
+}
+
