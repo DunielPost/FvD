@@ -1,0 +1,47 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+
+  --snickers-bruin: #410C00;
+  --snickers-paars: #210082;
+  --snickers-geel: #d9ac55;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+
+/* Fonts */
+
+
+@font-face {
+  font-family: "Snickers";
+  src: url(../fonts/FFMarkPaneuropeanBlack_normal_normal.woff);
+}
+
+@font-face {
+  font-family: "Snickers 2";
+  src: url(../fonts/FFMarkPaneuropeanCondensedBold_normal_condensed.woff);
+}
+
+@font-face {
+  font-family: "Snickers 3";
+  src: url(../fonts/Tungsten-Bold.woff);
+}
+
+
+
+a:visited {
+  color: white;
+}

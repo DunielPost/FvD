@@ -1,0 +1,407 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+/**************/
+/* ROOT & FONTS */
+/**************/
+:root {
+  /* startje – kun je later uitbreiden */
+  --snickers-bruin: #410C00;
+  --snickers-paars: #210082;
+  --snickers-geel: #d9ac55;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+
+
+/* Hero – Sectie 1 */
+
+/* p:first-of-type {
+  color: #fff;
+  font-family: "Snickers 2";
+} */
+
+main > section:first-of-type {
+  position: relative;
+  overflow: hidden;
+
+ 
+  min-height: 67vh;
+  padding: 5rem 1rem 4rem;   
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: flex-start;
+  gap: 1.5rem;                 
+
+  background-color: #382611;   /* fallback als video niet laadt */
+}
+
+
+section:first-of-type p:first-of-type {
+  color: #fff;
+  font-family: "Snickers 2";
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 1rem;
+  margin: 0;
+  z-index: 2;
+
+}
+
+section:first-of-type h2{
+  color: #fff;
+
+  font-family: "Snickers 3";
+  font-weight: 20;
+  font-size: 10em;
+  font-size: 2.4rem; 
+  text-transform: uppercase;
+
+  cursor: pointer;
+  margin: 0;
+  z-index: 2;
+
+}
+
+section:first-of-type a {
+width: fit-content;
+z-index: 2;
+
+}
+
+
+
+main > section:first-of-type > video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;  
+  z-index: 1;
+}
+
+
+
+
+
+
+/* Sectie 2 – Doorsnede Snickers */
+
+main > section:nth-of-type(2) {
+  background-color: #E5AC49;
+  padding-inline: 1.25em;
+  padding-block: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+main > section:nth-of-type(2) img {
+  order: 1;
+  max-width: 16rem;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 2rem auto;
+}
+
+main > section:nth-of-type(2) h2 {
+  order: 2;
+  color: white;
+  font-family: "Snickers 2";
+  font-size: 2em;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+  max-width: 22ch;
+  margin: 0 0 2rem 0;
+}
+
+main > section:nth-of-type(2) a {
+  order: 3;
+  width: fit-content;
+}
+
+main > section:nth-of-type(2) a:hover {
+  background-color: white;
+  color: #1b008e;
+  border-color: #1b008e;
+}
+
+main > section:nth-of-type(2) a:focus {
+  outline: 3px solid #1b008e;
+  outline-offset: 4px;
+}
+
+
+
+
+
+
+
+
+
+/* Sectie 3 – Favorieten */
+
+main > section:nth-of-type(3) {
+  background-color: #fff;
+  padding-block: 1rem;
+  padding-inline: 1.25rem;
+  text-align: center;
+}
+
+main > section:nth-of-type(3) h2 {
+  font-size: 2.5em;
+  font-family: "Snickers 3";
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  /* font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem); */
+  margin-bottom: 1rem;
+  color: #382611;
+}
+
+
+main > section:nth-of-type(3) ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+main > section:nth-of-type(3) li {
+  text-align: center;
+}
+
+main > section:nth-of-type(3) article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main > section:nth-of-type(3) img {
+  width: 90%;
+  max-width: 20rem;
+  height: auto;
+  margin-inline: auto;
+  display: block;
+  transition: transform 0.4s ease-in-out;
+}
+
+main > section:nth-of-type(3) img:hover {
+  transform: scale(1.05);
+}
+
+main > section:nth-of-type(3) h3 {
+  margin-top: 1.5rem;
+  font-family: "Snickers 2";
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  font-size: 1.2rem;
+  max-width: 8ch;
+  color: #382611;
+}
+
+main > section:nth-of-type(3) button {
+ 
+  margin-top: 1.2rem;
+
+}
+
+main > section:nth-of-type(3) button:hover {
+  background-color: white;
+  color: #210082;
+}
+
+/* volgorde in li */
+main > section:nth-of-type(3) li img    { order: 1; }
+main > section:nth-of-type(3) li h3    { order: 2; }
+main > section:nth-of-type(3) li button { order: 3; }
+
+
+
+
+
+
+
+
+
+/* Sectie 4 - Snickers Ingredienten */
+
+main > section:nth-of-type(4) {
+  padding: 0;
+  margin: 0;
+}
+
+main > section:nth-of-type(4) img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+
+
+
+/* Sectie 5 - Snickers Ice Cream*/
+
+main > section:nth-of-type(5) {
+  background-color: #3a1508;
+  background-image: url("../images/snicker-ice-cream.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+
+  color: #fff;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  padding-top: 4rem;
+  padding-bottom: 10rem;
+  padding-inline: 1.5rem;
+}
+
+main > section:nth-of-type(5) p:first-of-type {
+  font-family: "Snickers";
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+main > section:nth-of-type(5) h2 {
+  font-family: "Snickers";
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  font-size: clamp(1.8rem, 4vw + 1rem, 3rem);
+  margin-bottom: 1.5rem;
+}
+
+main > section:nth-of-type(5) p:last-of-type {
+  font-family: "Snickers";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  max-width: 24ch;
+  margin: 0 auto 2.5rem auto;
+}
+
+main > section:nth-of-type(5) button {
+  margin-bottom: 3rem;
+ 
+}
+
+main > section:nth-of-type(5) button:hover {
+  background-color: #fff;
+  color: #210082;
+}
+
+main > section:nth-of-type(5) img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 2rem;
+}
+
+
+
+
+
+
+/* Desktop CSS (>= 40em) */
+
+@media (min-width: 40em) {
+
+
+  section:first-of-type {
+    min-height: 80vh;
+    padding: 6rem 3rem 5rem;
+  }
+
+  section:first-of-type h2 {
+    font-size: 3.5rem;
+  }
+
+
+
+  /* Section 2 desktop – tekst rechts, beeld links */
+  main > section:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    column-gap: 1rem;
+    padding: 8rem 4rem 8rem 1.5rem;
+    align-items: center;
+  }
+
+  main > section:nth-of-type(2) img {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  main > section:nth-of-type(2) h2 {
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: 2rem;
+    font-size: 3.5rem;
+
+  }
+
+ main > section:nth-of-type(2) a {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: start;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+
+main > section:nth-of-type(3) h2 {
+    font-size: 3.5rem;
+}
+
+  main > section:nth-of-type(3) ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem .5rem; /* verticale, horizontale ruimte */
+  }
+
+  main > section:nth-of-type(3) article {
+    margin: 0;
+  }
+
+
+}
