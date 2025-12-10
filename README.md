@@ -140,6 +140,11 @@ Iz-dine: Vragen over ID bij labels
   hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
 
 
+  Ik had heel veel moeite van het goed krijgen van mijn menu sluit icon voor het hamburger menu, hij was telkens heel groot, zie afbeelding. Uiteindelijk blijkt het dat de afbeelding gewoon groter is dan het hamburger icoon.
+
+  <img src="readme-images/menu-sluit-voortgang.png" width="375px" alt="Menu sluit icoon is heel groot.">
+
+
   ### Agenda voor meeting
   
 
@@ -195,6 +200,17 @@ Iz-dine: Of zijn code nog te redden valt.
 
   ### Stand van zaken
   hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+
+  Ik loop een beetje achter. De tweede pagina moet ik nog mee beginnen, dit komt mede doordat ik alles in 1 css file had gestopt dus het was even heel wat werk om alles goed over te zetten naar de, zoals de opdracht voorschrijft, 3 lossen css files. Nog even gas geven om ervoor te zorgen dat mijn website sowieso af is voor het eind gesprek. Ook moet ik nog een light/dark mode toevoegen en dat snap ik nog niet zo goed dus daar mnoet ik ook even over gaan lezen.
+
+  Ik heb deze week dus veel "opschoon" werk gedaan.
+
+
+<img src="readme-images/3-styles.png" width="375px" alt="3 aangemaakte css files">
+
+
+
+
 
 
   ### Agenda voor meeting
