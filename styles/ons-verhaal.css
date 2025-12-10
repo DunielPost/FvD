@@ -1,64 +1,48 @@
-/**************/
-/* CSS REMEDY */
-/**************/
-*, *::after, *::before {
-  box-sizing: border-box;
-}
-
-/**************/
-/* ROOT & FONTS */
-/**************/
-:root {
-
-  --snickers-bruin: #410C00;
-  --snickers-blauw: #210082;
-  --snickers-geel: #d9ac55;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, sans-serif;
-  background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, sans-serif;
+    background-color: var(--page-bg);
+    color: var(--page-text);
 }
 
 
-**************/
+/**************/
 /* BASIS MAIN */
 /**************/
 
 main {
-  background-color: #ffffff;
-  color: var(--snickers-bruin);
+    background-color: var(--page-bg);
+    color: #ffffff;
+}
+
+main > nav {
+  display: none;
 }
 
 /* breadcrumb bovenaan */
-main > nav[aria-label="Breadcrumb"] {
-  font-size: 1.5em;
-  padding: 0.75rem 1.5rem;
-  font-family: "Snickers";
-  background-color: var(--snickers-bruin);
-  padding-left: 3em;
+
+main>nav[aria-label="Breadcrumb"] {
+    background-color: var(--snickers-bruin);
+    font-family: "Snickers";
+    font-size: 1em;
+    padding: 0.75rem 1.5rem;
+}
+
+main>nav[aria-label="Breadcrumb"] a {
+    color: #ffffff;
+    color: var(--snickers-geel);
+    text-decoration: none;
+    padding-left: 3em;
 
 }
 
-main > nav[aria-label="Breadcrumb"] a {
-  color: #ffffff;
-  text-decoration: none;
-  color: var(--snickers-geel);
-
-}
-
-main > nav[aria-label="Breadcrumb"] a:hover {
+main>nav[aria-label="Breadcrumb"] a:hover {
     text-decoration: underline;
 }
 
-main > nav[aria-label="Breadcrumb"] span {
-  opacity: 1;
+main>nav[aria-label="Breadcrumb"] span {
+    opacity: 1;
 }
 
 /**************/
@@ -66,60 +50,69 @@ main > nav[aria-label="Breadcrumb"] span {
 /**************/
 
 /* dit is main > section:first-of-type in de HTML die ik maakte */
-main > section:first-of-type {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
+main>section:first-of-type {
 
-  padding: 4rem 1.5rem 5rem;
-  color: #ffffff;
+    align-items: center;
 
-
-  background-color: var(--snickers-bruin);
-  /* hier kun je je eigen hero-afbeelding instellen: */
-  background-image: 
-        linear-gradient(to right, rgba(0,0,0,0.65), rgba(0,0,0,0)),
+    background-color: var(--snickers-bruin);
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0)),
         url("../images/verhaal-hero.webp");
-  background-size: cover;
+    background-size: cover;
+    background-position: right;
+
+
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 1.5rem 5rem;
+    position: relative;
+    text-align: center;
+
+
+    background-color: var(--snickers-bruin);
+    /* hier kun je je eigen hero-afbeelding instellen: */
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0)),
+        url("../images/verhaal-hero.webp");
+    background-size: cover;
     background-position: right;
 }
 
-main > section:first-of-type p:first-of-type {
-  font-family: "Snickers 2";
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.8rem;
-  margin-bottom: 0.5rem;
+main>section:first-of-type p:first-of-type {
+    font-family: "Snickers 2";
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
 }
 
-main > section:first-of-type h1 {
-  font-family: "Snickers";
-  text-transform: uppercase;
-  font-size: 2rem;
-  margin: 0 auto;
-  display: inline-block;
+main>section:first-of-type h1 {
+    font-family: "Snickers";
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 0 auto;
+    display: inline-block;
 }
 
-main > section:first-of-type p:last-of-type {
-  font-family: "Snickers";
-  max-width: 18rem;
-  font-size: 0.9rem;
+main>section:first-of-type p:last-of-type {
+    font-family: "Snickers";
+    max-width: 18rem;
+    font-size: 0.9rem;
 
 
 }
 
 /* rood streepje onder de H1 in de hero */
-main > section:first-of-type h1::after {
-  content: "";
-  display: block;
-  width: 3.5rem;
-  height: 0.45rem;
-  background-color: #c52323;
-  margin: 0.9rem auto;
-  
+main>section:first-of-type h1::after {
+    content: "";
+    display: block;
+    width: 3.5rem;
+    height: 0.45rem;
+    background-color: #c52323;
+    margin: 0.9rem auto;
+
 }
 
 /**************/
@@ -127,91 +120,94 @@ main > section:first-of-type h1::after {
 /**************/
 
 /* 1930 = 2e section, 1967–1990 = 3e, 2010 = 4e, 2019 = 5e, 2021 = 6e */
-main > section:nth-of-type(2),
-main > section:nth-of-type(3),
-main > section:nth-of-type(4),
-main > section:nth-of-type(5),
-main > section:nth-of-type(6) {
-  padding: .5rem 1.5rem;
+main>section:nth-of-type(2),
+main>section:nth-of-type(3),
+main>section:nth-of-type(4),
+main>section:nth-of-type(5),
+main>section:nth-of-type(6) {
+    padding: .5rem 1.5rem;
 }
 
 /* afbeeldingen standaard onder de tekst op mobiel */
-main > section:nth-of-type(2) figure,
-main > section:nth-of-type(3) figure,
-main > section:nth-of-type(4) figure,
-main > section:nth-of-type(5) figure,
-main > section:nth-of-type(6) figure {
-  margin: 2rem 0 0;
+main>section:nth-of-type(2) figure,
+main>section:nth-of-type(3) figure,
+main>section:nth-of-type(4) figure,
+main>section:nth-of-type(5) figure,
+main>section:nth-of-type(6) figure {
+    margin: 2rem 0 0;
 }
 
-main > section:nth-of-type(2) img,
-main > section:nth-of-type(3) img,
-main > section:nth-of-type(4) img,
-main > section:nth-of-type(5) img,
-main > section:nth-of-type(6) img {
-  display: block;
-  width: 100%;
-  height: auto;
+main>section:nth-of-type(2) img,
+main>section:nth-of-type(3) img,
+main>section:nth-of-type(4) img,
+main>section:nth-of-type(5) img,
+main>section:nth-of-type(6) img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 /* jaar-kopjes */
-main > section:nth-of-type(2) h2,
-main > section:nth-of-type(3) h2,
-main > section:nth-of-type(4) h2,
-main > section:nth-of-type(5) h2,
-main > section:nth-of-type(6) h2 {
-  font-family: "Snickers 3";
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  color: var(--snickers-blauw);
-  margin: 0 0 1rem;
+main>section:nth-of-type(2) h2,
+main>section:nth-of-type(3) h2,
+main>section:nth-of-type(4) h2,
+main>section:nth-of-type(5) h2,
+main>section:nth-of-type(6) h2 {
+    font-family: "Snickers 3";
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: var(--snickers-blauw);
+    margin: 0 0 1rem;
 }
 
 /* tekst onder de jaren */
-main > section:nth-of-type(2) p,
-main > section:nth-of-type(3) p,
-main > section:nth-of-type(4) p,
-main > section:nth-of-type(5) p,
-main > section:nth-of-type(6) p {
-  font-size: 1.5em;
-  line-height: 1.6;
-  max-width: 30rem;
-  font-family: "Snickers 2";
-  font-weight: bold;
-  color: var(--snickers-bruin);
+main>section:nth-of-type(2) p,
+main>section:nth-of-type(3) p,
+main>section:nth-of-type(4) p,
+main>section:nth-of-type(5) p,
+main>section:nth-of-type(6) p {
+    font-size: 1.5em;
+    line-height: 1.6;
+    max-width: 30rem;
+    font-family: "Snickers 2";
+    font-weight: bold;
+    color: var(--snickers-bruin);
 }
 
 
 
-main > section:nth-of-type(4) {
-  display: flex;
-  flex-direction: column-reverse; /* figure komt boven article */
+main>section:nth-of-type(4) {
+    display: flex;
+    flex-direction: column-reverse;
+    /* figure komt boven article */
 }
 
-main > section:nth-of-type(4) figure {
-  margin: 0;
-}
-
-
-main > section:nth-of-type(5) {
-  display: flex;
-  flex-direction: column-reverse; /* figure komt boven article */
-}
-
-main > section:nth-of-type(5) figure {
-  margin: 0; 
+main>section:nth-of-type(4) figure {
+    margin: 0;
 }
 
 
-
-
-main > section:nth-of-type(6) {
-  display: flex;
-  flex-direction: column-reverse; /* figure komt boven article */
+main>section:nth-of-type(5) {
+    display: flex;
+    flex-direction: column-reverse;
+    /* figure komt boven article */
 }
 
-main > section:nth-of-type(6) figure {
-  margin: 0; 
+main>section:nth-of-type(5) figure {
+    margin: 0;
+}
+
+
+
+
+main>section:nth-of-type(6) {
+    display: flex;
+    flex-direction: column-reverse;
+    /* figure komt boven article */
+}
+
+main>section:nth-of-type(6) figure {
+    margin: 0;
 }
 
 
@@ -221,231 +217,224 @@ main > section:nth-of-type(6) figure {
 /**************/
 
 /* dit is de 7e section in main */
-main > section:nth-of-type(7) {
-  padding: 3rem 1.5rem 3.5rem;
-  border-top: 4px solid var(--snickers-blauw);
-  border-bottom: 4px solid var(--snickers-blauw);
+main>section:nth-of-type(7) {
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;   /* alles links */
-  text-align: left; 
+    align-items: flex-start;
+    border-bottom: 4px solid var(--snickers-blauw);
+    border-top: 4px solid var(--snickers-blauw);
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 1.5rem 3.5rem;
+    text-align: left;
 }
 
-main > section:nth-of-type(7) h2 {
-  font-family: "Snickers 2";
-  font-size: 2em;
-  text-transform: uppercase;
-  margin: 0 0 1.75rem;
-  color: var(--snickers-bruin);
+main>section:nth-of-type(7) h2 {
+    color: var(--snickers-bruin);
+    font-family: "Snickers 2";
+    font-size: 2em;
+    margin: 0 0 1.75rem;
+    text-transform: uppercase;
 }
 
-main > section:nth-of-type(7) a.btn {
-  /* je hebt al een .btn in algemeen.css – hier alleen centreren */
-  margin-top: 0.5rem;
+main>section:nth-of-type(7) a.btn {
+    /* je hebt al een .btn in algemeen.css – hier alleen centreren */
+    margin-top: 0.5rem;
 }
 
 
 @media (min-width: 48em) {
 
-  /**************/
-  /* HERO DESKTOP */
-  /**************/
-  main > section:first-of-type {
-    padding: 6rem 5rem 7rem;
-    background-position: center right;
-  }
+    /**************/
+    /* HERO DESKTOP */
+    /**************/
+    main>section:first-of-type {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 30rem;
+        padding: 5rem 4rem;
+        color: #ffffff;
+        background-image:
+            linear-gradient(to right, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0)),
+            url("../images/verhaal-hero.webp");
+        background-size: cover;
+        background-position: right;
+    }
 
-  main > section:first-of-type h1 {
-    font-size: 3rem;
-    max-width: 20rem;
-  }
+    main>section:first-of-type p:first-of-type {
+        font-family: "Snickers 2";
+        font-size: 1rem;
+        letter-spacing: 0.12em;
+        margin: 0 0 1.2rem;
+        text-transform: uppercase;
+    }
+
+    main>section:first-of-type h1 {
+        font-family: "Snickers";
+        font-size: 3.2rem;
+        font-weight: 10;
+        line-height: 1.05;
+        margin: 0 auto;
+        max-width: 32em;
+        text-transform: uppercase;
+    }
+
+    main>section:first-of-type h1::after {
+        background-color: #c52323;
+        content: "";
+        display: block;
+        height: 0.4rem;
+        margin: 1.1rem auto 0;
+        width: 3.5rem;
+    }
+
+    main>section:first-of-type p:last-of-type {
+        font-family: "Snickers";
+        font-size: 1.5rem;
+        margin-top: 1.6rem;
+        max-width: 32rem;
+    }
+
+    /**************/
+    /* TIJDLIJN GRID */
+    /**************/
+    main>section:nth-of-type(2),
+    main>section:nth-of-type(3),
+    main>section:nth-of-type(4),
+    main>section:nth-of-type(5),
+    main>section:nth-of-type(6) {
+        align-items: start;
+        column-gap: 3rem;
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+        margin-inline: auto;
+        max-width: 80em;
+        padding: 4rem 5rem;
+    }
+
+    /* afbeeldingen niet meer met extra marge erboven */
+    main>section:nth-of-type(2) figure,
+    main>section:nth-of-type(3) figure,
+    main>section:nth-of-type(4) figure,
+    main>section:nth-of-type(5) figure,
+    main>section:nth-of-type(6) figure {
+        margin: 0;
+    }
+
+    /* 1930 – tekst links, foto rechts */
+    main>section:nth-of-type(2) article {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    main>section:nth-of-type(2) figure {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /* 1967–1990 – foto links, tekst rechts */
+    main>section:nth-of-type(3) figure {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    main>section:nth-of-type(3) article {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /* 2010 – tekst links, foto rechts */
+    main>section:nth-of-type(4) article {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    main>section:nth-of-type(4) figure {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /* 2019 – foto links, tekst rechts */
+    main>section:nth-of-type(5) figure {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    main>section:nth-of-type(5) article {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /* 2021 – tekst links, foto rechts */
+    main>section:nth-of-type(6) article {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    main>section:nth-of-type(6) figure {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /* jaren en tekst iets groter op desktop */
+    main>section:nth-of-type(2) h2,
+    main>section:nth-of-type(3) h2,
+    main>section:nth-of-type(4) h2,
+    main>section:nth-of-type(5) h2,
+    main>section:nth-of-type(6) h2 {
+        font-size: 3em;
+        margin-bottom: 1.25rem;
+    }
+
+    main>section:nth-of-type(2) p,
+    main>section:nth-of-type(3) p,
+    main>section:nth-of-type(4) p,
+    main>section:nth-of-type(5) p,
+    main>section:nth-of-type(6) p {
+        font-size: 1.5rem;
+        letter-spacing: .1rem;
+        max-width: 33rem;
+    }
+
+    /**************/
+    /* CTA DESKTOP */
+    /**************/
+    main>section:nth-of-type(7) {
+        padding: 4.5rem 5rem;
+    }
+
+    main>section:nth-of-type(7) h2 {
+        color: var(--snickers-bruin);
+        font-size: 4rem;
+    }
 
 
-   main > section:first-of-type {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;       /* horizontaal centreren */
-    justify-content: center;   /* verticaal centreren */
-    text-align: center;
 
-    min-height: 30rem;
-    padding: 5rem 4rem;
+    /* tekst: linksboven (rij 1, kolom 1) */
+    main>section:nth-of-type(2) article {
+        grid-column: 1;
+        grid-row: 1;
+        margin: 0;
+    }
 
-    color: #ffffff;
+    /* beeld: rechtsboven (rij 1, kolom 2) */
+    main>section:nth-of-type(2) figure {
+        grid-column: 2;
+        grid-row: 1;
+        margin: 0;
+    }
 
-    /* donkere balk links + hero-beeld rechts */
-    background-image:
-      linear-gradient(to right, rgba(0,0,0,0.65), rgba(0,0,0,0)),
-      url("../images/verhaal-hero.webp");  
-       
-    background-size: cover;
-    background-position: right;
-  }
+    main>section:nth-of-type(2) h2 {
+        margin-top: 0;
+    }
 
-  /* “OVER SNICKERS.” boven de titel */
-  main > section:first-of-type p:first-of-type {
-    font-family: "Snickers 2";
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-size: 1rem;
-    margin: 0 0 1.2rem;
-  }
-
-  /* grote titel */
-  main > section:first-of-type h1 {
-    font-family: "Snickers";
-    text-transform: uppercase;
-    font-weight: 10;
-    font-size: 3.2rem;
-    line-height: 1.05;
-    margin: 0;
-    white-space: normal;
-    width: auto;
-    max-width: 32em;
-    margin: 0 auto;
-  }
-
-  /* rood streepje onder de titel, gecentreerd */
-  main > section:first-of-type h1::after {
-    content: "";
-    display: block;
-    width: 3.5rem;
-    height: 0.4rem;
-    background-color: #c52323;
-    margin: 1.1rem auto 0;
-  }
-
-  /* ondertitel “Het lekkerste verhaal ooit verteld.” */
-  main > section:first-of-type p:last-of-type {
-
-    max-width: 32rem;
-    margin-top: 1.6rem;
-    font-size: 1.5rem;
-    
-   
-    font-family: "Snickers";
-  }
-
-  /**************/
-  /* TIJDLIJN GRID */
-  /**************/
-  main > section:nth-of-type(2),
-  main > section:nth-of-type(3),
-  main > section:nth-of-type(4),
-  main > section:nth-of-type(5),
-  main > section:nth-of-type(6) {
-    margin-inline: auto;
-    max-width: 80em;
-    padding: 4rem 5rem;
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-    column-gap: 3rem;
-    align-items: start;
-  }
-
-  /* afbeeldingen niet meer met extra marge erboven */
-  main > section:nth-of-type(2) figure,
-  main > section:nth-of-type(3) figure,
-  main > section:nth-of-type(4) figure,
-  main > section:nth-of-type(5) figure,
-  main > section:nth-of-type(6) figure {
-    margin: 0;
-  }
-
-  /* 1930 – tekst links, foto rechts */
-main > section:nth-of-type(2) article { grid-column: 1; grid-row: 1; }
-main > section:nth-of-type(2) figure  { grid-column: 2; grid-row: 1; }
-
-/* 1967–1990 – foto links, tekst rechts */
-main > section:nth-of-type(3) figure  { grid-column: 1; grid-row: 1; }
-main > section:nth-of-type(3) article { grid-column: 2; grid-row: 1; }
-
-/* 2010 – tekst links, foto rechts */
-main > section:nth-of-type(4) article { grid-column: 1; grid-row: 1; }
-main > section:nth-of-type(4) figure  { grid-column: 2; grid-row: 1; }
-
-/* 2019 – foto links, tekst rechts */
-main > section:nth-of-type(5) figure  { grid-column: 1; grid-row: 1; }
-main > section:nth-of-type(5) article { grid-column: 2; grid-row: 1; }
-
-/* 2021 – tekst links, foto rechts */
-main > section:nth-of-type(6) article { grid-column: 1; grid-row: 1; }
-main > section:nth-of-type(6) figure  { grid-column: 2; grid-row: 1; }
-
-
-
-
-
-
-
-
-
-
-  /* jaren en tekst iets groter op desktop */
-  main > section:nth-of-type(2) h2,
-  main > section:nth-of-type(3) h2,
-  main > section:nth-of-type(4) h2,
-  main > section:nth-of-type(5) h2,
-  main > section:nth-of-type(6) h2 {
-    font-size: 3em;
-    margin-bottom: 1.25rem;
-  }
-
-  main > section:nth-of-type(2) p,
-  main > section:nth-of-type(3) p,
-  main > section:nth-of-type(4) p,
-  main > section:nth-of-type(5) p,
-  main > section:nth-of-type(6) p {
-    font-size: 1.5rem;
-    letter-spacing: .1rem;
-     max-width: 33rem;
-  }
-
-  /**************/
-  /* CTA DESKTOP */
-  /**************/
-  main > section:nth-of-type(7) {
-    padding: 4.5rem 5rem;
-  }
-
-  main > section:nth-of-type(7) h2 {
-    font-size: 4rem;
-    color: var(--snickers-bruin);
-  }
-
-    /* container */
-  main > section:nth-of-type(2) {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-    column-gap: 3rem;
-    align-items: flex-start;
-    padding: 4rem 5rem;
-  }
-
-  /* tekst: linksboven (rij 1, kolom 1) */
-  main > section:nth-of-type(2) article {
-    grid-column: 1;
-    grid-row: 1;
-    margin: 0;
-  }
-
-  /* beeld: rechtsboven (rij 1, kolom 2) */
-  main > section:nth-of-type(2) figure {
-    grid-column: 2;
-    grid-row: 1;
-    margin: 0;
-  }
-
-  main > section:nth-of-type(2) h2 {
-    margin-top: 0;
-  }
-
-  main > section:nth-of-type(2) figure img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+    main>section:nth-of-type(2) figure img {
+        display: block;
+        height: auto;
+        width: 100%;
+    }
 
 }

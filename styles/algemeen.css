@@ -1,75 +1,77 @@
 /**************/
 /* CSS REMEDY */
 /**************/
-*, *::after, *::before {
-  box-sizing: border-box;
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
 }
 
 /**************/
 /* ROOT & FONTS */
 /**************/
 :root {
-  /* startje – kun je later uitbreiden */
-  --snickers-bruin: #410C00;
-  --snickers-paars: #210082;
-  --snickers-geel: #d9ac55;
 
-  /* BUTTON VARS */
-  --btn-bg: #210082;
-  --btn-color: #ffffff;
-  --btn-border-color: #210082;
-  --btn-radius: 100rem;
-  --btn-padding-y: 1rem;
-  --btn-padding-x: 2.5rem;
-  --btn-font-family: "Snickers 2";
-  --btn-font-size: 1rem;
-  --btn-font-weight: 300;
-  --btn-letter-spacing: 0.05em;
-  --btn-hover-bg: #ffffff;
-  --btn-hover-color: #210082;
+    /* Snickers kleuren */
+    --snickers-bruin: #410C00;
+    --snickers-blauw: #210082;
+    --snickers-geel: #d9ac55;
+
+    /* Button variabelen */
+    --btn-bg: #210082;
+    --btn-color: #ffffff;
+    --btn-border-color: #210082;
+    --btn-radius: 100rem;
+    --btn-padding-y: 1rem;
+    --btn-padding-x: 2.5rem;
+    --btn-font-family: "Snickers 2";
+    --btn-font-size: 1rem;
+    --btn-font-weight: 300;
+    --btn-letter-spacing: 0.05em;
+    --btn-hover-bg: #ffffff;
+    --btn-hover-color: #210082;
+
+    /* Thema (light/dark) */
+    --page-bg: #ffffff;
+    --page-text: var(--snickers-bruin);
+
+    color-scheme: light dark;
 }
 
 
 .btn {
-  display: inline-block;
-  padding: var(--btn-padding-y) var(--btn-padding-x);
-  background-color: var(--btn-bg);
-  color: var(--btn-color);
-  border-radius: var(--btn-radius);
-  border: 0.15rem solid var(--btn-border-color);
+    display: inline-block;
+    padding: var(--btn-padding-y) var(--btn-padding-x);
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+    border-radius: var(--btn-radius);
+    border: 0.15rem solid var(--btn-border-color);
 
-  font-family: var(--btn-font-family);
-  font-size: var(--btn-font-size);
-  font-weight: var(--btn-font-weight);
-  letter-spacing: var(--btn-letter-spacing);
-  text-transform: uppercase;
+    font-family: var(--btn-font-family);
+    font-size: var(--btn-font-size);
+    font-weight: var(--btn-font-weight);
+    letter-spacing: var(--btn-letter-spacing);
+    text-transform: uppercase;
 
-  text-decoration: none;      /* zodat <a> ook een nette knop is */
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    /* zodat <a> ook een nette knop is */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: var(--btn-hover-bg);
-  color: var(--btn-hover-color);
+    background-color: var(--btn-hover-bg);
+    color: var(--btn-hover-color);
+    /* wisselt kleuren om voor een "reversed" hover effect */
 }
 
 .btn:focus-visible {
-  outline: 3px solid var(--btn-hover-color);
-  outline-offset: 4px;
+    outline: 3px solid var(--btn-hover-color);
+    outline-offset: 4px;
 }
 
-* {
-  box-sizing: border-box;
-}
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, sans-serif;
-  background-color: #000;
-  color: #fff;
-}
+
 
 /**************/
 /* FONTS */
@@ -77,18 +79,18 @@ body {
 
 
 @font-face {
-  font-family: "Snickers";
-  src: url(../fonts/FFMarkPaneuropeanBlack_normal_normal.woff);
+    font-family: "Snickers";
+    src: url(../fonts/FFMarkPaneuropeanBlack_normal_normal.woff);
 }
 
 @font-face {
-  font-family: "Snickers 2";
-  src: url(../fonts/FFMarkPaneuropeanCondensedBold_normal_condensed.woff);
+    font-family: "Snickers 2";
+    src: url(../fonts/FFMarkPaneuropeanCondensedBold_normal_condensed.woff);
 }
 
 @font-face {
-  font-family: "Snickers 3";
-  src: url(../fonts/Tungsten-Bold.woff);
+    font-family: "Snickers 3";
+    src: url(../fonts/Tungsten-Bold.woff);
 }
 
 /**************/
@@ -96,8 +98,21 @@ body {
 /**************/
 
 
-a:visited {
-  color: white;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, sans-serif;
+    background-color: var(--page-bg);
+    color: var(--page-text);
+}
+
+
+
+
+footer a:link,
+footer a:visited {
+    color: inherit;
+      /* voorkomt paars/standaard visited kleur, maar het neemt kleur van parent over */
 }
 
 
@@ -106,169 +121,186 @@ a:visited {
 /**************/
 /* HEADER & NAV – MOBIEL */
 /**************/
+
+
+/* 
+Bron: MDN Web Docs & CSS-Tricks
+Gebruik van <header>, <nav> en Flexbox voor toegankelijke navigatie
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*/
+
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 5em;
-  padding-inline: 1.1em;
-  background-color: #410C00;
-  /* position: sticky; */
-  top: 0;
-  z-index: 10;
+    display: flex; /* logo + menu button naast elkaar */
+    align-items: center;
+    justify-content: space-between;
+    height: 5em;
+    padding-inline: 1.1em;
+    background-color: #410C00; /* Snickers-bruin */
+    top: 0;
+    z-index: 10; /* blijft boven content */
 }
 
-header > img {
-  height: 2.6rem;
-  width: auto;
-  position: relative;
-  z-index: 35;
+header>img {
+    height: 2.6rem;
+    width: auto;
+    position: relative;
+    z-index: 35;
 }
 
-header > button {
-  order: 3;
-  background: none;
-  border: none;
-  position: relative;
-  z-index: 30;
+header>button {
+    order: 3;
+    background: none;
+    border: none;
+    position: relative;
+    z-index: 30;
 
-  display: flex;
-  align-items: center;
-  color: #d9ac55;
-  font-family: "Snickers 2";
-  text-transform: uppercase;
-  font-size: 1.1em;
- 
+    display: flex;
+    align-items: center;
+    color: #d9ac55;
+    font-family: "Snickers 2";
+    text-transform: uppercase;
+    font-size: 1.1em;
+
 }
 
 
 
-header > button img {
-  width: 3rem;     
-  height: auto;
-  border: none;  
-  height: auto;
-  display: block;
+header>button img {
+    width: 3rem;
+    height: auto;
+    border: none;
+    height: auto;
+    display: block;
 }
 
 
 header nav {
-  position: fixed;
-  inset: 0;           /* top/right/bottom/left 0 */
-  translate: -100% 0; /* off canvas */
-  z-index: 20;
+    position: fixed;  /* nav vult hele pagina in mobiel */
+    inset: 0;
+    translate: -100% 0; /* Buiten beeld */
+    z-index: 20;
 }
 
 header nav.is-open {
-  translate: 0 0;
-  background-color: #410C00;
-  transition: .4s ease;
+    translate: 0 0;
+    background-color: #410C00;
+    transition: .4s ease;
 }
 
-header nav button {
-  background: none;
-  border: none;
-  width: 2em;
-  height: 2em;
-  align-items: flex-end;
-}
+
 
 header nav ul {
-  margin: 2em;
-  padding-top: 5em;
-  padding-left: .4em;
-  list-style: none;
-  color: white;
+    margin: 2em;
+    padding-top: 5em;
+    padding-left: .4em;
+    list-style: none;
+    color: white;
 
 }
 
 header nav ul li {
-  margin-bottom: 24px;
+    margin-bottom: 24px;
 }
 
 header nav ul a {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 1.5em;
-  font-weight: 700;
-  color: white;
-  font-family: "Snickers 2";
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: white;
+    font-family: "Snickers 2";
 }
 
 /* Zoeklabel */
+
+/*
+Bron: MDN Web Docs
+Search input en label gebruikt i.v.m. toegankelijkheid
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/search
+*/
+
+
 header nav label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: "Snickers 2";
-  font-size: 0.9rem;
-  color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: "Snickers 2";
+    font-size: 0.9rem;
+    color: white;
 }
 
 /* Zoekveld zelf */
 header nav input[type="search"] {
-  background: #ffffff;
-  border: none;
-  padding: 0.35rem 0.75rem;
-  border-radius: 0.25rem;
-  font-size: 0.9rem;
-  width: 8rem;
-  transition: all 0.25s ease;
+    background: #ffffff;
+    border: none;
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    width: 8rem;
+    transition: all 0.25s ease;
 }
 
 /* Focus-effect zoals Snickers */
 header nav input[type="search"]:focus {
-  outline: none;
-  width: 12rem;
-  box-shadow: 0 0 0 2px #ffffff;
+    outline: none;
+    width: 12rem; /* zoekveld groeit bij focus */
+    box-shadow: 0 0 0 2px #ffffff;
 }
 
 
 
 /* Footer */
 
-footer > section:first-of-type {
-  background-color: #E5AC49;
-  padding-top: 3em;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2rem;
+/*
+Bron: MDN Web Docs – CSS Grid Layout
+CSS Grid gebruikt voor meerkoloms footer op desktop
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
+*/
+
+footer>section:first-of-type {
+    background-color: #E5AC49;
+    padding-top: 3em;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 25px;
+    display: flex;
+    flex-direction: column; /* mobiel: alles onder elkaar */
+    align-items: flex-start;
+    gap: 2rem;
 
 }
 
-footer > section:first-of-type img {
-  width: 5.5rem;
-  height: auto;
+footer>section:first-of-type img {
+    width: 5.5rem;
+    height: auto;
 }
 
-footer > section:first-of-type ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+footer>section:first-of-type ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-footer > section:first-of-type li {
-  flex-basis: 50%;
-  margin-bottom: 1.5rem;
+footer>section:first-of-type li {
+    flex-basis: 50%;
+    margin-bottom: 1.5rem;
 }
 
-footer > section:first-of-type a {
-  text-decoration: none;
-  color: #4b1b0a;
-  font-family: "Snickers 2";
-  text-transform: uppercase;
-  font-size: 1em;
+footer>section:first-of-type a {
+    text-decoration: none;
+    color: #4b1b0a;
+    font-family: "Snickers 2";
+    text-transform: uppercase;
+    font-size: 1em;
 }
 
-footer > section:first-of-type a:hover{
-  text-decoration: underline;}
+footer>section:first-of-type a:hover {
+    text-decoration: underline;
+}
 
 
 
@@ -276,130 +308,136 @@ footer > section:first-of-type a:hover{
 
 
 
-  /* Bruine gedeelte footer */
+/* Bruine gedeelte footer */
 
 footer {
-  background-color: #410c00;
-  color: #fff;
-  padding: 0; /* we doen dit per section */
+    background-color: #410c00;
+    color: #fff;
+    padding: 0;
+    /* we doen dit per section */
 }
 
 footer section:nth-of-type(2) {
-  padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem;
 }
 
 footer section:nth-of-type(2) h2 {
-  font-family: "Snickers";
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+    font-family: "Snickers";
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
 }
 
 footer section:nth-of-type(2) nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
 }
 
 footer section:nth-of-type(2) nav a {
-  color: white;
-  font-size: 1.6rem; /* vervang dit later door icons */
-  text-decoration: none;
+    color: white;
+    font-size: 1.6rem;
+    /* vervang dit later door icons */
+    text-decoration: none;
 }
 
 
 
-footer > hr {
-  border: none;
-  border-top: 1px solid rgba(255,255,255,0.35);
-  margin: 1.5rem 1.5rem;
+footer>hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+    margin: 1.5rem 1.5rem;
 }
 
 footer section:nth-of-type(3) {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 footer section:nth-of-type(3) ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 kolommen */
-  column-gap: 2rem;
-  row-gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* 2 kolommen */
+    column-gap: 2rem;
+    row-gap: 1rem;
 }
 
 footer section:nth-of-type(3) li {
-  margin: 0; /* spacing komt uit row-gap */
+    margin: 0;
+    /* spacing komt uit row-gap */
 }
 
 footer section:nth-of-type(3) a {
-  display: block;           /* zodat je verticale ruimte goed werkt */
-  color: #fff;
-  text-decoration: none;
-  font-family: "Snickers 2";
-  font-size: 1rem;
+    display: block;
+    /* zodat je verticale ruimte goed werkt */
+    color: #fff;
+    text-decoration: none;
+    font-family: "Snickers 2";
+    font-size: 1rem;
 }
- 
+
 footer section:nth-of-type(3) a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* Disclaimer */
 
 footer section:nth-of-type(4) {
-  padding: 1.5rem;
-  font-size: 0.75rem;
-  line-height: 1.45;
+    padding: 1.5rem;
+    font-size: 0.75rem;
+    font-family: "Snickers 2";
+    line-height: 1.45;
 }
 
 footer section:nth-of-type(4) p {
-  margin: 0 0 1rem;
+    margin: 0 0 1rem;
 }
 
 /* Lijn onderste CTA */
 
-footer section:nth-of-type(4) + hr {
-  border: none;
-  border-top: 1px solid rgba(255,255,255,0.35);
-  margin: 1.5rem 1.5rem;
+footer section:nth-of-type(4)+hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+    margin: 1.5rem 1.5rem;
 }
 
 
 /* CTA blok */
 
 footer section:nth-of-type(5) {
-  padding: 2rem 1.5rem 3rem;
+    padding: 2rem 1.5rem 3rem;
 }
 
 footer section:nth-of-type(5) p {
-  font-family: "Snickers";
-  text-transform: uppercase;
-  font-size: 1rem;
-  margin-bottom: 1.2rem;
+    font-family: "Snickers";
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
 }
 
 footer section:nth-of-type(5) a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.9rem 2.2rem;
-  border-radius: 999px;
-  border: 2px solid #fff;
-  color: #fff;
-  text-decoration: none;
-  font-family: "Snickers";
-  text-transform: uppercase;
-  font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 2.2rem;
+    border-radius: 999px;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Snickers";
+    text-transform: uppercase;
+    font-size: 0.9rem;
 }
 
 footer section:nth-of-type(5) a:hover {
-  background-color: white;
-  color: #410c00;
+    background-color: white;
+    color: #410c00;
 }
 
 
@@ -420,59 +458,68 @@ footer section:nth-of-type(5) a:hover {
 /**************/
 
 
+/*
+Bron: MDN Web Docs & Google Developers
+Mobile-first aanpak met min-width media queries
+https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries
+https://developers.google.com/web/fundamentals/design-and-ux/responsive
+*/
+
+
 @media (min-width: 40em) {
 
-  /* Header desktop */
+    /* Header desktop */
 
-  header {
-    padding-left: 4em;
-    height: 7em;
-  }
+    header {
+        padding-left: 4em;
+        height: 7em;
+    }
 
-  header > img {
-    height: 3.5rem;
-    width: auto;
-  }
+    header>img {
+        height: 3.5rem;
+        width: auto;
+    }
 
-  header > button {
-    padding-right: 5em;
-  }
+    header>button {
+        padding-right: 5em;
+    }
 
-   
- footer > section:first-of-type {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: start;
-    padding: 2.5rem 4rem;
-    gap: 2.5rem;
-  }
 
-  footer > section:first-of-type img {
-    width: 5.5rem;
-  }
+    footer>section:first-of-type {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        padding: 2.5rem 4rem;
+        gap: 2.5rem;
+    }
 
-  footer > section:first-of-type ul {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 2.5rem;
-    margin: 0;
-    padding: 0;
-  }
+    footer>section:first-of-type img {
+        width: 5.5rem;
+    }
 
-  footer > section:first-of-type li {
-    flex-basis: auto;
-    margin-bottom: 0;
-  }
+    footer>section:first-of-type ul {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 2.5rem;
+        margin: 0;
+        padding: 0;
+    }
 
-  footer section:nth-of-type(3) ul {
-    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 kolommen */
-    column-gap: 3rem;  /* mag je tunen */
-    row-gap: 1.2rem;
-  }
-  
-  
- 
+    footer>section:first-of-type li {
+        flex-basis: auto;
+        margin-bottom: 0;
+    }
+
+    footer section:nth-of-type(3) ul {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        /* 3 kolommen */
+        column-gap: 3rem;
+        row-gap: 1.2rem;
+    }
+
+
+
 }
 
 
@@ -487,163 +534,174 @@ footer section:nth-of-type(5) a:hover {
 
 @media (min-width: 64em) {
 
-   header > button {
-    display: none;
-  }
 
-  header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    column-gap: 3rem;
-    padding-left: 4em;
-    height: 10rem;
-    background-color: #410C00;
-  }
+    header {
+        align-items: center;
+        background-color: #410C00;
+        column-gap: 3rem;
+        display: flex;
+        height: 10rem;
+        justify-content: flex-start;
+        padding-left: 4em;
+    }
 
+    /* nav zelf: container voor de ul */
+    header nav {
+        display: flex;
+        align-items: center;
+        background: none;
+        padding-left: 0;
+        padding-top: 0;
+        position: static;
+        translate: 0 0;
+    }
 
-  header > video {
-    height: 100%;
-  }
+    /* ul: alle li's + label met search in één rij */
+    header nav ul {
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 
-  header > img {
-    height: 5.5rem;
-    width: auto;
-  }
+    header nav a {
+        color: white;
+        font-family: "Snickers 2";
+        font-size: 1rem;
+        font-weight: 400;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
 
+    /* hamburger-knop weg op desktop */
+    header > button {
+        display: none;
+    }
 
-  header nav {
-  display: flex;
-  align-items: center;   /* ← zorgt dat menu en search verticaal uitlijnen */
-  gap: 2rem;             /* ruimte tussen ul en search */
-}
+    /* logo-hoogte */
+    header > img {
+        height: 5.5rem;
+        width: auto;
+    }
 
-  header nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 2em;
-    margin: 0;
-    padding: 0;
-    
-    
-  }
+   
+    header nav label {
+        display: flex;
+        align-items: center;
+    }
 
-  header nav ul a {
+    /* search op zelfde baseline/hoogte als de links */
+    header nav input[type="search"] {
+        border-radius: 6px;
+        border: none;
+        font-family: "Snickers 2";
+        font-size: 0.9rem;
+        height: 2rem;
+        line-height: 2rem;
+        padding: 0 0.75rem;
+        margin: 0;
+    }
 
-    font-size: 1em;
-  }
-
-  header nav a {
-    color: white;
-    font-family: "Snickers 2";
-    font-size: 1rem;
-    text-decoration: none;
-    font-weight: 400;
-    text-transform: uppercase;
-  }
-
-  header nav input[type="search"] {
-  height: 2rem;            /* zelfde hoogte “gevoel” als menu-items */
-  padding: 0 0.75rem;
-  border-radius: 6px;
-  border: none;
-  font-size: 0.9rem;
-  font-family: "Snickers 2";
-}
-
-  header nav {
-    position: static;
-    translate: 0 0;
-    background: none;
-    padding-top: 0;
-    padding-left: 0;
-  }
-
-  header nav button {
-    display: none;
-  }
-
- 
+    footer>section:first-of-type img {
+        height: 6em;
+        width: auto;
+    }
 
 
- footer > section:first-of-type img {
-    width: auto;
-    height: 6em;
-  }
-
-
-  /* Footer krijgt 4 kolommen, maar gele balk + onderstukken
+    /* Footer krijgt 4 kolommen, maar gele balk + onderstukken
      spannen over alle 4 kolommen heen */
-  footer {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-auto-rows: auto;
-    column-gap: 2.5rem;
-    
-  }
+    footer {
+        column-gap: 2.5rem;
+        display: grid;
+        grid-auto-rows: auto;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
 
-  /* GELE BALK: altijd full-width */
-  footer > section:first-of-type {
-    grid-column: 1 / -1;
-
-  }
-
-  /* VOLG ONS OP: kolom 1 */
-  footer > section:nth-of-type(2) {
-    grid-column: 1 / 2;
-    padding-left: 4em;
-  }
-
-  /* LINKJES: kolommen 2 t/m 4 */
-  footer > section:nth-of-type(3) {
-    grid-column: 2 / 5;
-  }
-
-  footer section:nth-of-type(3) li {
-    
-    margin-bottom: 1rem; /* grotere spacing op desktop */
-  }
-
-  /* in die sectie verdelen we de UL over 3 kolommen */
-  footer > section:nth-of-type(3) ul {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 kolommen links */
-    column-gap: 2.5rem;
-    row-gap: 1.1rem;
-    padding-top: 3em;
-  }
-
-  /* Disclaimer + CTA + eventuele hr’s: weer full-width */
-  footer > section:nth-of-type(4) {
-    grid-column: 2 / 5;   /* onder kolom 2–4 */
-    max-width: 60ch;      /* hou de tekst in een mooi blok */
-    /* eventueel iets extra ruimte boven */
-    margin-top: 1.5rem;
-    font-size: 1em;
-    font-family: "Snickers 2";
-    font-weight: 10;
-  }
-
-
-    /* CTA blijft wél full-width */
-    footer > section:nth-of-type(5),
-    footer > hr:last-of-type {
-    grid-column: 1 / -1;
-    }
-    footer > hr:first-of-type {
-    display: none;
     }
 
-footer > section:last-of-type{
-    padding-left: 4em;
+    /* GELE BALK: altijd full-width */
+    footer>section:first-of-type {
+        grid-column: 1 / -1;
+
+    }
+
+    /* VOLG ONS OP: kolom 1 */
+    footer>section:nth-of-type(2) {
+        grid-column: 1 / 2;
+        padding-left: 4em;
+    }
+
+    /* LINKJES: kolommen 2 t/m 4 */
+    footer>section:nth-of-type(3) {
+        grid-column: 2 / 5;
+    }
+
+    footer section:nth-of-type(3) li {
+
+        margin-bottom: 1rem;
+        /* grotere spacing op desktop */
+    }
+
+    /*  UL verdelen over 3 kolommen */
+    footer>section:nth-of-type(3) ul {
+        /* 3 kolommen links */
+        column-gap: 2.5rem;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        padding-top: 3em;
+        row-gap: 1.1rem;
+    }
+
+    /* Disclaimer + CTA + hr: weer full-width */
+    footer>section:nth-of-type(4) {
+
+        font-family: "Snickers 2";
+        font-size: 1em;
+        font-weight: 10;
+        grid-column: 2 / 5;
+        margin-top: 1.5rem;
+        max-width: 60ch;
+    }
+
+
+    /* CTA full-width */
+    footer>section:nth-of-type(5),
+    footer>hr:last-of-type {
+        grid-column: 1 / -1;
+    }
+
+    footer>hr:first-of-type {
+        display: none;
+    }
+
+    footer>section:last-of-type {
+        padding-left: 4em;
+    }
+
 }
 
 
+/*
+Bron: MDN Web Docs
+Dark mode met prefers-color-scheme en CSS-variabelen
+https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
+*/
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --page-bg: #D3D3D3;
+        --page-text: #f2f2f2;
+    }
 
+    /* Donkerdere bruine footer-achtergrond */
+    footer {
+        background-color: #2b140c;
+        color: #f2f2f2;
+    }
+
+    /* Gele balk in de footer iets donkerder maken in dark mode */
+    footer>section:first-of-type {
+        background-color: #b8913a;
+    }
 }
-
-
-
-

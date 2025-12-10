@@ -260,6 +260,8 @@ Iz-dine: Of zijn code nog te redden valt.
   Ik vond het erg lastig om de structuur aan te passen van de volgorde van de items in de footer. Door te spelen met grid is het me uiteindelijk wel gelukt, maar het kostte me erg veel moeite. 
 
   <img src="readme-images/footer-structuur.png" width="375px" alt="footer ontwerp">
+
+  Het is me niet gelukt om de search bar uit te lijnen met de list items in het navigatie menu in de header, tot mijn grote frustratie.
 </details>
 
 
@@ -271,12 +273,48 @@ Iz-dine: Of zijn code nog te redden valt.
 <details open>
   <summary>continu bijhouden terwijl je werkt</summary>
 
-  Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg). 
-  Nb. ChatGpT en andere AI horen er ook bij.
-  Nb. Vermeld de bronnen ook in je code.
 
-  1. bron 1
-  2. bron 2
-  3. ...
+
+  1. MDN Web Docs – HTML <nav> element
+    Gebruik voor uitleg waarom navigatie in <nav> hoort.
+
+    MDN Web Docs. (z.d.). The Navigation Section element.
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav
+
+
+  2. Bron: MDN Web Docs
+      Search input en label gebruikt i.v.m. toegankelijkheid
+      https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/search
+   
+  3. 
+      Bron: MDN Web Docs – CSS Grid Layout
+      CSS Grid gebruikt voor meerkoloms footer op desktop
+      https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
+
+
+  4. 
+      Bron: MDN Web Docs & Google Developers
+      Mobile-first aanpak met min-width media queries
+      https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries
+      https://developers.google.com/web/fundamentals/design-and-ux/responsive
+      
+  5. 
+      Bron: MDN Web Docs
+      Dark mode met prefers-color-scheme en CSS-variabelen
+      https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme  
+
+  6. 
+      Bron: MDN Web Docs
+      Gebruik van position:absolute en object-fit voor video backgrounds
+      https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
+
+
+  7. 
+    Bron: CSS-Tricks
+    Flexbox gebruikt voor verticale uitlijning van hero-content
+    https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+      
 
 </details>
