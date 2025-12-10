@@ -55,6 +55,8 @@ main > section:first-of-type {
 }
 
 
+
+
 section:first-of-type p:first-of-type {
   color: #fff;
   font-family: "Snickers 2";
@@ -112,7 +114,6 @@ main > section:nth-of-type(2) {
   padding-block: 5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 }
 
 main > section:nth-of-type(2) img {
@@ -174,10 +175,24 @@ main > section:nth-of-type(3) h2 {
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 0.03em;
-  /* font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem); */
   margin-bottom: 1rem;
-  color: #382611;
+  color: #410C00;
+
+  position: relative;
+  display: inline-block;
+
 }
+
+main > section:nth-of-type(3) h2::after {
+  content: "";
+  display: block;
+  width: 2.8em;
+  height: 0.625rem;
+  background-color: #C52323;
+  margin: 0.7rem auto 0;
+}
+
+
 
 
 main > section:nth-of-type(3) ul {
@@ -225,7 +240,7 @@ main > section:nth-of-type(3) h3 {
 
 main > section:nth-of-type(3) button {
  
-  margin-top: 1.2rem;
+  margin-top: .5rem;
 
 }
 
@@ -277,7 +292,7 @@ main > section:nth-of-type(5) {
   background-image: url("../images/snicker-ice-cream.webp");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center bottom;
+  background-position: center;
 
   color: #fff;
   text-align: center;
@@ -287,35 +302,58 @@ main > section:nth-of-type(5) {
   align-items: center;
   gap: 2rem;
 
-  padding-top: 4rem;
-  padding-bottom: 10rem;
-  padding-inline: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-inline: 1rem;
+
 }
 
 main > section:nth-of-type(5) p:first-of-type {
-  font-family: "Snickers";
+  font-family: "Snickers 2";
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.9rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: -2rem;
 }
 
 main > section:nth-of-type(5) h2 {
-  font-family: "Snickers";
+  font-family: "Snickers 3";
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 0.03em;
-  font-size: clamp(1.8rem, 4vw + 1rem, 3rem);
+  font-size: 2.25em;
+  /* font-size: clamp(1.8rem, 4vw + 1rem, 3rem); */
   margin-bottom: 1.5rem;
+
+  position: relative;
+  display: inline-block;
+  
 }
+
+
+
+main > section:nth-of-type(5) h2::after {
+  content: "";
+  display: block;
+  width: 2.8em;
+  height: 0.625rem;
+  background-color: #C52323;
+  margin: 1rem auto 0;
+}
+
+
+
+
+
+
 
 main > section:nth-of-type(5) p:last-of-type {
   font-family: "Snickers";
-  font-size: 1.1rem;
+  font-size: 1.3em;
   font-weight: 600;
   line-height: 1.4;
   max-width: 24ch;
-  margin: 0 auto 2.5rem auto;
+  margin: 0 auto 2rem auto;
 }
 
 main > section:nth-of-type(5) button {
@@ -338,22 +376,74 @@ main > section:nth-of-type(5) img {
 
 
 
-
-
 /* Desktop CSS (>= 40em) */
 
 @media (min-width: 40em) {
 
 
-  section:first-of-type {
-    min-height: 80vh;
-    padding: 6rem 3rem 5rem;
+main > section:first-of-type {
+  padding: 6rem 5rem 5rem;
+
+}
+
+main > section:first-of-type h2 {
+  font-size: 3.5rem;
+}
+
+
+
+
+main > section:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    column-gap: 1rem;
+    padding: 5rem 5rem 5rem 1.5rem;
+    align-items: center;
+  
+
+}
+
+main > section:nth-of-type(2) h2 {
+  font-size: 3em;
+}
+
+main > section:nth-of-type(2) a {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: start;
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  section:first-of-type h2 {
-    font-size: 3.5rem;
+
+main > section:nth-of-type(2) img {
+  width: auto;
+  height: auto;
+}
+
+
+}
+
+
+
+
+
+
+
+/* Desktop CSS (>= 64em) */
+
+@media (min-width: 64em) {
+
+
+  main > section:first-of-type {
+    /* min-height: 80vh; */
+    padding: 6rem 10rem 5rem; 
+    
   }
 
+  main > section:first-of-type h2 {
+    font-size: 4.5rem;
+  }
 
 
   /* Section 2 desktop – tekst rechts, beeld links */
@@ -369,7 +459,8 @@ main > section:nth-of-type(5) img {
     grid-column: 1;
     grid-row: 1 / 3;
     max-width: 100%;
-    margin: 0;
+    margin-left: 10em;
+    transform: translateX(-20%);
   }
 
   main > section:nth-of-type(2) h2 {
@@ -389,19 +480,41 @@ main > section:nth-of-type(5) img {
   }
 
 
+  main > section:nth-of-type(3) {
+    padding-left: 4em;
+    padding-right: 4em;
+
+  }
+
 main > section:nth-of-type(3) h2 {
-    font-size: 3.5rem;
+    font-size: 4em;
+    font-weight: 10;
+
+    margin-bottom: .5em;
 }
 
   main > section:nth-of-type(3) ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 4rem .5rem; /* verticale, horizontale ruimte */
+    gap: 2rem ; /* verticale, horizontale ruimte */
   }
 
   main > section:nth-of-type(3) article {
     margin: 0;
   }
 
+
+  main > section:nth-of-type(5) h2 {
+    font-size: 3.5em;
+    font-weight: 10;
+
+  }
+
+
+  main > section:nth-of-type(5) p:last-of-type {
+    max-width: fit-content;
+    font-size: 1.4em;
+    
+  }
 
 }

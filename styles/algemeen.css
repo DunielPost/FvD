@@ -102,6 +102,7 @@ a:visited {
 
 
 
+
 /**************/
 /* HEADER & NAV – MOBIEL */
 /**************/
@@ -118,7 +119,7 @@ header {
 }
 
 header > img {
-  height: 2.5rem;
+  height: 2.6rem;
   width: auto;
   position: relative;
   z-index: 35;
@@ -136,13 +137,14 @@ header > button {
   color: #d9ac55;
   font-family: "Snickers 2";
   text-transform: uppercase;
+  font-size: 1.1em;
  
 }
 
 
 
 header > button img {
-  width: 2.5rem;     /* ongeveer 35px, pas aan naar smaak */
+  width: 3rem;     
   height: auto;
   border: none;  
   height: auto;
@@ -150,20 +152,20 @@ header > button img {
 }
 
 
-nav {
+header nav {
   position: fixed;
   inset: 0;           /* top/right/bottom/left 0 */
   translate: -100% 0; /* off canvas */
   z-index: 20;
 }
 
-nav.is-open {
+header nav.is-open {
   translate: 0 0;
   background-color: #410C00;
   transition: .4s ease;
 }
 
-nav button {
+header nav button {
   background: none;
   border: none;
   width: 2em;
@@ -171,7 +173,7 @@ nav button {
   align-items: flex-end;
 }
 
-nav ul {
+header nav ul {
   margin: 2em;
   padding-top: 5em;
   padding-left: .4em;
@@ -180,24 +182,52 @@ nav ul {
 
 }
 
-nav ul li {
+header nav ul li {
   margin-bottom: 24px;
 }
 
-nav ul a {
+header nav ul a {
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 700;
   color: white;
   font-family: "Snickers 2";
+}
+
+/* Zoeklabel */
+header nav label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Snickers 2";
+  font-size: 0.9rem;
+  color: white;
+}
+
+/* Zoekveld zelf */
+header nav input[type="search"] {
+  background: #ffffff;
+  border: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  width: 8rem;
+  transition: all 0.25s ease;
+}
+
+/* Focus-effect zoals Snickers */
+header nav input[type="search"]:focus {
+  outline: none;
+  width: 12rem;
+  box-shadow: 0 0 0 2px #ffffff;
 }
 
 
 
 /* Footer */
 
-main > section:nth-of-type(6) {
+footer > section:first-of-type {
   background-color: #E5AC49;
   padding-top: 3em;
   padding-left: 20px;
@@ -210,12 +240,12 @@ main > section:nth-of-type(6) {
 
 }
 
-main > section:nth-of-type(6) img {
+footer > section:first-of-type img {
   width: 5.5rem;
   height: auto;
 }
 
-main > section:nth-of-type(6) ul {
+footer > section:first-of-type ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -224,12 +254,12 @@ main > section:nth-of-type(6) ul {
   flex-wrap: wrap;
 }
 
-main > section:nth-of-type(6) li {
+footer > section:first-of-type li {
   flex-basis: 50%;
   margin-bottom: 1.5rem;
 }
 
-main > section:nth-of-type(6) a {
+footer > section:first-of-type a {
   text-decoration: none;
   color: #4b1b0a;
   font-family: "Snickers 2";
@@ -237,9 +267,148 @@ main > section:nth-of-type(6) a {
   font-size: 1em;
 }
 
-main > section:nth-of-type(6) a:hover{
+footer > section:first-of-type a:hover{
+  text-decoration: underline;}
+
+
+
+
+
+
+
+  /* Bruine gedeelte footer */
+
+footer {
+  background-color: #410c00;
+  color: #fff;
+  padding: 0; /* we doen dit per section */
+}
+
+footer section:nth-of-type(2) {
+  padding: 2rem 1.5rem;
+}
+
+footer section:nth-of-type(2) h2 {
+  font-family: "Snickers";
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+footer section:nth-of-type(2) nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+footer section:nth-of-type(2) nav a {
+  color: white;
+  font-size: 1.6rem; /* vervang dit later door icons */
+  text-decoration: none;
+}
+
+
+
+footer > hr {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.35);
+  margin: 1.5rem 1.5rem;
+}
+
+footer section:nth-of-type(3) {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+footer section:nth-of-type(3) ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 kolommen */
+  column-gap: 2rem;
+  row-gap: 1rem;
+}
+
+footer section:nth-of-type(3) li {
+  margin: 0; /* spacing komt uit row-gap */
+}
+
+footer section:nth-of-type(3) a {
+  display: block;           /* zodat je verticale ruimte goed werkt */
+  color: #fff;
+  text-decoration: none;
+  font-family: "Snickers 2";
+  font-size: 1rem;
+}
+ 
+footer section:nth-of-type(3) a:hover {
   text-decoration: underline;
 }
+
+/* Disclaimer */
+
+footer section:nth-of-type(4) {
+  padding: 1.5rem;
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+footer section:nth-of-type(4) p {
+  margin: 0 0 1rem;
+}
+
+/* Lijn onderste CTA */
+
+footer section:nth-of-type(4) + hr {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.35);
+  margin: 1.5rem 1.5rem;
+}
+
+
+/* CTA blok */
+
+footer section:nth-of-type(5) {
+  padding: 2rem 1.5rem 3rem;
+}
+
+footer section:nth-of-type(5) p {
+  font-family: "Snickers";
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+footer section:nth-of-type(5) a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Snickers";
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+footer section:nth-of-type(5) a:hover {
+  background-color: white;
+  color: #410c00;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -254,17 +423,87 @@ main > section:nth-of-type(6) a:hover{
 @media (min-width: 40em) {
 
   /* Header desktop */
+
+  header {
+    padding-left: 4em;
+    height: 7em;
+  }
+
+  header > img {
+    height: 3.5rem;
+    width: auto;
+  }
+
   header > button {
+    padding-right: 5em;
+  }
+
+   
+ footer > section:first-of-type {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    padding: 2.5rem 4rem;
+    gap: 2.5rem;
+  }
+
+  footer > section:first-of-type img {
+    width: 5.5rem;
+  }
+
+  footer > section:first-of-type ul {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  footer > section:first-of-type li {
+    flex-basis: auto;
+    margin-bottom: 0;
+  }
+
+  footer section:nth-of-type(3) ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 kolommen */
+    column-gap: 3rem;  /* mag je tunen */
+    row-gap: 1.2rem;
+  }
+  
+  
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 64em) {
+
+   header > button {
     display: none;
   }
 
   header {
     display: flex;
     justify-content: flex-start;
-    gap: 3rem;
-    padding-inline: 2rem;
+    align-items: center;
+    column-gap: 3rem;
+    padding-left: 4em;
     height: 10rem;
     background-color: #410C00;
+  }
+
+
+  header > video {
+    height: 100%;
   }
 
   header > img {
@@ -272,33 +511,139 @@ main > section:nth-of-type(6) a:hover{
     width: auto;
   }
 
-  nav {
-    position: static;
-    translate: 0 0;
-    background: none;
-    align-items: center;
-    padding-top: 0;
-    padding-left: 0;
-  }
 
-  nav button {
-    display: none;
-  }
+  header nav {
+  display: flex;
+  align-items: center;   /* ← zorgt dat menu en search verticaal uitlijnen */
+  gap: 2rem;             /* ruimte tussen ul en search */
+}
 
   header nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 2em;
     margin: 0;
+    padding: 0;
+    
+    
+  }
+
+  header nav ul a {
+
+    font-size: 1em;
   }
 
   header nav a {
     color: white;
-    font-family: "Snickers";
+    font-family: "Snickers 2";
     font-size: 1rem;
     text-decoration: none;
     font-weight: 400;
     text-transform: uppercase;
   }
 
+  header nav input[type="search"] {
+  height: 2rem;            /* zelfde hoogte “gevoel” als menu-items */
+  padding: 0 0.75rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.9rem;
+  font-family: "Snickers 2";
 }
+
+  header nav {
+    position: static;
+    translate: 0 0;
+    background: none;
+    padding-top: 0;
+    padding-left: 0;
+  }
+
+  header nav button {
+    display: none;
+  }
+
+ 
+
+
+ footer > section:first-of-type img {
+    width: auto;
+    height: 6em;
+  }
+
+
+  /* Footer krijgt 4 kolommen, maar gele balk + onderstukken
+     spannen over alle 4 kolommen heen */
+  footer {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    column-gap: 2.5rem;
+    
+  }
+
+  /* GELE BALK: altijd full-width */
+  footer > section:first-of-type {
+    grid-column: 1 / -1;
+
+  }
+
+  /* VOLG ONS OP: kolom 1 */
+  footer > section:nth-of-type(2) {
+    grid-column: 1 / 2;
+    padding-left: 4em;
+  }
+
+  /* LINKJES: kolommen 2 t/m 4 */
+  footer > section:nth-of-type(3) {
+    grid-column: 2 / 5;
+  }
+
+  footer section:nth-of-type(3) li {
+    
+    margin-bottom: 1rem; /* grotere spacing op desktop */
+  }
+
+  /* in die sectie verdelen we de UL over 3 kolommen */
+  footer > section:nth-of-type(3) ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 kolommen links */
+    column-gap: 2.5rem;
+    row-gap: 1.1rem;
+    padding-top: 3em;
+  }
+
+  /* Disclaimer + CTA + eventuele hr’s: weer full-width */
+  footer > section:nth-of-type(4) {
+    grid-column: 2 / 5;   /* onder kolom 2–4 */
+    max-width: 60ch;      /* hou de tekst in een mooi blok */
+    /* eventueel iets extra ruimte boven */
+    margin-top: 1.5rem;
+    font-size: 1em;
+    font-family: "Snickers 2";
+    font-weight: 10;
+  }
+
+
+    /* CTA blijft wél full-width */
+    footer > section:nth-of-type(5),
+    footer > hr:last-of-type {
+    grid-column: 1 / -1;
+    }
+    footer > hr:first-of-type {
+    display: none;
+    }
+
+footer > section:last-of-type{
+    padding-left: 4em;
+}
+
+
+
+
+}
+
+
+
+
