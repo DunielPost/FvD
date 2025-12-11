@@ -60,6 +60,17 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
 
+
+  Veel errors, verkeerd gebruik van h1, video kan niet op pauze, alleen als je tabt. Geen darkmode aanwezig.
+
+  <img src="readme-images/Play-pause-knop-snickers.png" width="375px" alt="breakdown van de hele pagina">
+
+  <img src="readme-images/Verkeerd-gebruik-h1.png" width="375px" alt="breakdown van een dynamisch deel">
+
+
+
+
+
 </details>
 
 
@@ -183,9 +194,14 @@ Iz-dine: Of zijn code nog te redden valt.
   ### Bevindingen
   Ik heb nog geen light/dark mode toegevoegd, dus dat moet nog.
 
-  Ik heb een goede structuur van heading.
+  Ik heb een goede structuur van headings.
 
   De screenreader loopt door mijn website heen.
+
+   <img src="readme-images/headings-home.png" width="375px" alt="breakdown van een dynamisch deel">
+   <img src="readme-images/Headings-verhaal.png" width="375px" alt="breakdown van een dynamisch deel">
+
+   
 
 </details>
 
@@ -267,7 +283,7 @@ Iz-dine: Of zijn code nog te redden valt.
   ### Dit ging goed/Heb ik geleerd: 
   Korte omschrijving met plaatjes
 
-  Ik heb geleerd hoe ik een video toevoeg, hoe ik een hamburger menu maak, hoe ik grid kan gebruiken om een pagina vorm te geven
+  Ik heb geleerd hoe ik een video toevoeg, hoe ik een hamburger menu maak, hoe ik grid kan gebruiken om een pagina vorm te geven. Ook heb ik de basis geleerd van een light/dark mode functie en ben ik bezig geweest met de toegangkelijkheid van de website. 
 
   <img src="readme-images/grid-ons-verhaal.png" width="375px" alt="grid gebruikt voor ons verhaal pagina">
 
@@ -277,7 +293,10 @@ Iz-dine: Of zijn code nog te redden valt.
 
   <img src="readme-images/footer-structuur.png" width="375px" alt="footer ontwerp">
 
-  Het is me niet gelukt om de search bar uit te lijnen met de list items in het navigatie menu in de header, tot mijn grote frustratie.
+  Het is me niet gelukt om de search bar uit te lijnen met de list items in het navigatie menu in de header, tot mijn grote frustratie. Ik heb veel internet bronnen geraadpleegd, maar desondanks is het mij niet gelukt om deze items met elkaar uit te lijnen.
+
+<img src="readme-images/Navigatie-desktop-fail.png" width="375px" alt="footer ontwerp">
+
 </details>
 
 
